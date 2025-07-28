@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Pass Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <span class="arrow">&#x1F860;</span>
+            <span class="title" style="margin-left: -20px; font-weight: 700;" >Transport Summa...</span>
+            <span class="pay-fees" >Pay Fees</span>
+        </header>
+
+        <nav class="nav">
+            <li class="active">Pass</li>
+            <li>Rules & Regulations</li>
+            <li class="leble">Receipt <li class="ys" style="margin-left: 5px; font-size: 0.69rem;">1</li></li>
+           
+        </nav>
+
+        <main class="pass-card">
+            <div class="card-top">
+                <img class="student-photo" src="yash.jpeg" alt="Student Photo">
+                <div class="bus-details">
+                    <div class="bus-status">
+                        <img class="bus-icon" src="/newbus.png" alt="Bus Icon">
+                        <button class="status-btn active-btn"> <strong> Active </strong> </button>
+                    </div>
+                    <button class="status-btn pass-no-btn">Bus Pass No. <strong>25/S/1102/006</strong></button>
+                </div>
+            </div>
+
+            <div class="card-info">
+                <div class="info-item">
+                    <p class="name"><strong>TADHANI YASH KAPILBHAI</strong></p>
+                    <p class="details">(Sem- 3 | 2403051050742 | PIT-1-BE-CSE-3)</p>
+                </div>
+                <div class="info-item">
+                    <span class="label">Pickup Point</span>
+                    <p><strong>AREA-09 -</strong> <span style="font-weight: 400;">જુના હાઉસિંગ બોર્ડ</span></p>
+                </div>
+                <div class="info-item">
+                    <span class="label">Shift & Timings</span>
+                    <p><strong>FIRST SHIFT (07:30 AM to 02:15 PM)</strong></p>
+                </div>
+                <div class="info-item">
+                    <span class="label">Duration</span>
+                    <p><strong>01-07-2025 to 30-06-2026</strong></p>
+                </div>
+                <div class="info-item">
+                    <span class="label">Route</span>
+                    <p><strong>-</strong></p>
+                </div>
+            </div>
+
+            <div class="fees-section">
+                <div class="fee-item">
+                    <span class="label">Fees Amount</span>
+                    <p class="amount blue">&#8377; 25,000</p>
+                </div>
+                <div class="fee-item">
+                    <span class="label">Fees Paid</span>
+                    <p class="amount green">&#8377; 25,000</p>
+                </div>
+                <div class="fee-item">
+                    <span class="label">Pending Amount</span>
+                    <p class="amount black">&#8377; 0</p>
+                </div>
+            </div>
+        </main>
+
+
+
+        <section class="time-section">
+            <div id="date-display"></div>
+            <div id="time-display"></div>
+        </section>
+
+        <button class="register-btn">Register for Transport</button>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            document.getElementById('date-display').textContent = now.toLocaleDateString('en-GB', dateOptions).replace(/\//g, '-');
+            
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+            document.getElementById('time-display').textContent = now.toLocaleTimeString('en-GB', timeOptions);
+        }
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call
+
+        // Tab switching logic
+        document.querySelectorAll('.nav li').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav li.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -26,7 +26,10 @@ body {
     background-color: #f2f3f4;
     min-height: 100vh;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    
+}
+.arrow img{
+    margin-top: 3px;
+    width: 70%;   
 }
 
 /* --- Header --- */

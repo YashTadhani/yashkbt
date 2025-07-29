@@ -85,6 +85,18 @@
         <button class="register-btn">Register for Transport</button>
     </div>
 
+    <div class="tb">
+  <div id="photoModal" class="modal">
+    <div class="circle-container">
+        <div class="circle-outline"></div>
+ <div class="student-capsule">
+        <img class="modal-content" id="zoomedPhoto">
+    </div>
+</div>
+     </div>
+</div>
+
+    
     <script>
         function updateClock() {
             const now = new Date();
@@ -104,6 +116,23 @@
                 this.classList.add('active');
             });
         });
+
+                  // ADDED: JavaScript for Photo Zoom Feature
+        const modal = document.getElementById("photoModal");
+        const studentPhoto = document.querySelector(".student-photo");
+        const modalImg = document.getElementById("zoomedPhoto");
+
+        // When the user clicks on the student photo, open the modal
+        studentPhoto.onclick = function() {
+          modal.style.display = "flex";
+          modalImg.src = this.src;
+        }
+
+        // When the user clicks anywhere, close the modal
+        modal.onclick = function() {
+            modal.style.display = "none";
+        }
+        
     </script>
 </body>
 </html>
